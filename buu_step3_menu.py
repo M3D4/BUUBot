@@ -37,9 +37,9 @@ class class_step(object):
     def test(self, msg, userId):
         self.class_database_op.step_back(userId)
         itchatmp.send("正在查询，请稍候。。。", msg['FromUserName'])
-        card = self.class_database_op.get_card_info(userId)
+        card = self.class_database_op.get_jwxt_info(userId)
         if not card:
-            return "您还没有保存您的信息，请到校园卡菜单来输入登录信息吧~"
+            return "您还没有保存您的信息，选 3 来输入登录信息吧~"
         request_utils_ins = request_utils.request_utils()
         results = request_utils_ins.jwxt_total_login(userId)
 
@@ -60,9 +60,9 @@ class class_step(object):
     def export_to_ical(self, msg, userId):
         self.class_database_op.step_back(userId)
         itchatmp.send("正在查询，请稍候。。。", msg['FromUserName'])
-        card = self.class_database_op.get_card_info(userId)
+        card = self.class_database_op.get_jwxt_info(userId)
         if not card:
-            return "您还没有保存您的信息，请到校园卡菜单来输入登录信息吧~"
+            return "您还没有保存您的信息，选 3 来输入登录信息吧~"
         request_utils_ins = request_utils.request_utils()
         results = request_utils_ins.jwxt_total_login(userId)
 
